@@ -62,7 +62,7 @@ get '/' do
   erb :index
 end
 
-get 'user/:username' do
+get '/user' do
   user = client.user(params[:username])
   tweets = client.get_all_tweets(user)
   evaluation = evaluation(tweets)

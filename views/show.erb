@@ -1,0 +1,10 @@
+Yay!
+<p>Total tweets:<%= user.tweets_count %></p>
+<p>Failing tweets: <%= evaluation[0] %></p>
+<p>Failing words: <%= evaluation[1] %></p>
+
+<ul>
+<% evaluation[2].each do |wordinfo| %>
+<li><%=wordinfo[:count] %> count: <%= wordinfo[:word].capitalize %></li>
+<% end %>
+</ul>
