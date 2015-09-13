@@ -49,7 +49,6 @@ def evaluation(tweets)
                   {word: "actual", count: 0},
                   {word: "literally", count: 0},
                   {word: "ridiculous", count: 0},
-                  {word: "awesome", count: 0},
                   {word: "seriously", count: 0},
                   {word: "was", count: 0},
                   {word: "awesome", count: 0},
