@@ -1,27 +1,24 @@
 <div class="row heading">
-  <div class="column"><h1>Use Your Words</h1></div>
-</div>
-<div class="row">
-  <div class="one-half column">
-    <p>
-    </p>
-    <form action="/user" method="get">
-      <input class="u-full-width" type="text" name="username" placeholder="Twitter Username">
-      <input class="button-primary u-full-width" type="submit" value="Get My Report">
-    </form>
+  <div class="one-half column"><h1>Use Your Words</h1>
     <div class="row">
-      <strong><p style="margin-bottom: 10px;">User: <%= user.screen_name %></p></strong>
-      <p><%= tweets.count / evaluation[1] %>% of <%= user.name %>'s <%= user.tweets_count %> tweets use weak language, with a total of <%= evaluation[1] %> failing words.</p>
+        <form action="/user" method="get">
+          <input class="u-full-width" type="text" name="username" placeholder="Twitter Username">
+          <input id="submit" class="button-primary u-full-width" type="submit" value="Get My Report">
+        </form>
+        <div class="row">
+          <h3><%= user.screen_name %></h3>
+          <p><%= tweets.count / evaluation[1] %>% of <%= user.name %>'s <%= user.tweets_count %> tweets use weak language, with a total of <%= evaluation[1] %> failing words.</p>
+        </div>
     </div>
   </div>
   <div class="one-half column">
-    <div class="word-bubble">
-      <% evaluation[2].each do |wordinfo| %>
-      <% if wordinfo[:count] > 0 %>
-      <div class="word-line"><strong><%= wordinfo[:word].capitalize %>:</strong> <%=wordinfo[:count] %> times</div>
-      <% end %>
-      <% end %>
-      <div class="word-line"><span class="statement">Opinions, Thoughts, and Feelings</span></div>
-    </div>
+      <div class="word-bubble">
+        <% evaluation[2].each do |wordinfo| %>
+        <% if wordinfo[:count] > 0 %>
+        <div class="word-line"><strong><%= wordinfo[:word].capitalize %>:</strong> <%=wordinfo[:count] %> times</div>
+        <% end %>
+        <% end %>
+        <div class="word-line"><span class="statement">OPINIONS, THOUGHTS, FEELINGS</span></div>
+      </div>
   </div>
 </div>

@@ -1,14 +1,15 @@
-  <div class="row heading">
-    <div class="column"><h1>Use Your Words</h1></div>
-  </div>
-  <div class="row">
-    <div class="one-half column">
-      <p>
-        Check your twitter report
-      </p>
-      <form action="/user" method="get">
-        <input type="text" name="username" placeholder="Username">
-      </form>
+<div class="row heading">
+  <div class="one-half column"><h1>Use Your Words</h1>
+    <div class="row">
+        <form action="/user" method="get">
+          <input class="u-full-width" type="text" name="username" placeholder="Twitter Username">
+          <input id="submit" class="button-primary u-full-width" type="submit" value="Get My Report">
+        </form>
     </div>
-    <div class="one-half column"></div>
   </div>
+  <div class="one-half column">
+      <div class="word-bubble empty">
+        <div class="word-line" id="empty">“To emphasise your most important thought, let it stand alone.” <em>—Anonymous</em></div>
+      </div>
+  </div>
+</div>
