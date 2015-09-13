@@ -1,10 +1,27 @@
-Yay!
-<p>Total tweets:<%= user.tweets_count %></p>
-<p>Failing tweets: <%= evaluation[0] %></p>
-<p>Failing words: <%= evaluation[1] %></p>
-
-<ul>
-<% evaluation[2].each do |wordinfo| %>
-<li><%=wordinfo[:count] %> count: <%= wordinfo[:word].capitalize %></li>
-<% end %>
-</ul>
+<div class="row heading">
+  <div class="column"><h1>Use Your Words</h1></div>
+</div>
+<div class="row">
+  <div class="one-half column">
+    <p>
+    </p>
+    <form action="/user" method="get">
+      <input class="u-full-width" type="text" name="username" placeholder="Twitter Username">
+      <input class="button-primary u-full-width" type="submit" value="Get My Report">
+    </form>
+    <div class="row">
+      <strong><p style="margin-bottom: 10px;">User: <%= user.screen_name %></p></strong>
+      <p><%= tweets.count / evaluation[1] %>% of <%= user.name %>'s <%= user.tweets_count %> tweets use weak language, with a total of <%= evaluation[1] %> failing words.</p>
+    </div>
+  </div>
+  <div class="one-half column">
+    <div class="word-bubble">
+      <% evaluation[2].each do |wordinfo| %>
+      <% if wordinfo[:count] > 0 %>
+      <div class="word-line"><strong><%= wordinfo[:word].capitalize %>:</strong> <%=wordinfo[:count] %> times</div>
+      <% end %>
+      <% end %>
+      <div class="word-line"><span class="statement">Opinions, Thoughts, and Feelings</span></div>
+    </div>
+  </div>
+</div>
