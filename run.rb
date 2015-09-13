@@ -74,6 +74,7 @@ def evaluation(tweets)
       failing_tweets += 1
     end
   end
+  marked_words.sort_by! { |hash| -hash[:count] }
   evaluation = [failing_tweets, failing_words, marked_words]
 end
 
