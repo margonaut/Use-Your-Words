@@ -7,7 +7,7 @@
         </form>
         <div class="row">
           <h3><%= user.screen_name %></h3>
-          <p><%= (evaluation[1] / user.tweets_count ) %>% of <%= user.name %>'s <%= user.tweets_count %> tweets use weak language, with <%= evaluation[1] %> failing words.</p>
+          <p><%= percentage %>% of <%= user.name %>'s <%= user.tweets_count %> tweets use weak language, with <%= evaluation[1] %> failing words.</p>
         </div>
     </div>
   </div>

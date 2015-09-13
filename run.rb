@@ -30,6 +30,12 @@ def evaluation(tweets)
   failing_tweets = 0
   failing_words = 0
   marked_words = [{word: "just", count: 0},
+                  {word: "stuff", count: 0},
+                  {word: "things", count: 0},
+                  {word: "really", count: 0},
+                  {word: "very", count: 0},
+                  {word: "actual", count: 0},
+                  {word: "in my opinion", count: 0},
                   {word: "like", count: 0},
                   {word: "maybe", count: 0},
                   {word: "perhaps", count: 0},
@@ -38,7 +44,22 @@ def evaluation(tweets)
                   {word: "i wouldn't know", count: 0},
                   {word: "i guess", count: 0},
                   {word: "actually", count: 0},
-                  {word: "i mean", count: 0},]
+                  {word: "i mean", count: 0},
+                  {word: "had had", count: 0},
+                  {word: "actual", count: 0},
+                  {word: "literally", count: 0},
+                  {word: "ridiculous", count: 0},
+                  {word: "awesome", count: 0},
+                  {word: "seriously", count: 0},
+                  {word: "was", count: 0},
+                  {word: "awesome", count: 0},
+                  {word: "amazing", count: 0},
+                  {word: "nice", count: 0},
+                  {word: "bad", count: 0},
+                  {word: "basically", count: 0},
+                  {word: "absolutely", count: 0},
+                  {word: "unbelievable", count: 0},
+                  {word: "totally", count: 0}]
   tweets.each do |tweet|
     passing = true
     marked_words.each do |wordinfo|
@@ -66,7 +87,8 @@ get '/user' do
   user = client.user(params[:username])
   tweets = client.get_all_tweets(user)
   evaluation = evaluation(tweets)
-  erb :show, locals: { user: user, tweets: tweets, evaluation: evaluation }
+  percentage = ((evaluation[0].to_f/user.tweets_count.to_f)*100).round(2)
+  erb :show, locals: { user: user, tweets: tweets, evaluation: evaluation, percentage: percentage }
 end
 
 # puts "choose username"
