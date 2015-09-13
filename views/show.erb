@@ -1,5 +1,5 @@
 <div class="row heading">
-  <div class="one-half column"><h1>Use Your Words</h1>
+  <div class="one-half column"><a href="/"><h1>Use Your Words</h1></a>
     <div class="row">
         <form action="/user" method="get">
           <input class="u-full-width" type="text" name="username" placeholder="Twitter Username">
@@ -7,7 +7,7 @@
         </form>
         <div class="row">
           <h3><%= user.screen_name %></h3>
-          <p><%= tweets.count / evaluation[1] %>% of <%= user.name %>'s <%= user.tweets_count %> tweets use weak language, with a total of <%= evaluation[1] %> failing words.</p>
+          <p><%= tweets.count / evaluation[1] %>% of <%= user.name %>'s <%= user.tweets_count %> tweets use weak language, with <%= evaluation[1] %> failing words.</p>
         </div>
     </div>
   </div>
