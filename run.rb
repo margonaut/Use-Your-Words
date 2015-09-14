@@ -34,7 +34,6 @@ def evaluation(tweets)
                   {word: "things", count: 0},
                   {word: "really", count: 0},
                   {word: "very", count: 0},
-                  {word: "actual", count: 0},
                   {word: "in my opinion", count: 0},
                   {word: "like", count: 0},
                   {word: "maybe", count: 0},
@@ -74,6 +73,7 @@ def evaluation(tweets)
     end
   end
   marked_words.sort_by! { |hash| -hash[:count] }
+  marked_words = marked_words[1..8]
   evaluation = [failing_tweets, failing_words, marked_words]
 end
 
